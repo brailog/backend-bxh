@@ -10,6 +10,10 @@ gem 'puma', '~> 3.11'
 # gem to faker generates data at random
 gem 'faker'
 gem 'json'
+gem 'httparty'
+gem 'cucumber-rails', require: false
+gem 'database_cleaner'
+gem 'rspec-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
