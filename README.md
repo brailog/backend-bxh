@@ -3,8 +3,9 @@
 
 ### _Repositorio voltado para o BACKEND_
 
-
 # Bug x Hunter
+
+Já conhece a [Wiki](https://github.com/brailog/backend-bxh/wiki)? Lá tem infomações sobre as [gem](https://github.com/brailog/backend-bxh/wiki/gem) utilizadas no desenvolvimento explicações sobre organização das [pastas](https://github.com/brailog/backend-bxh/wiki/explica%C3%A7%C3%A3o-organiza%C3%A7%C3%A3o-de-algumas-pastas) entre outras informações.
 
 [![](http://files.softicons.com/download/culture-icons/anime-icons-i-ii-by-samir-chajia/png/128x128/Hunter%20x%20Hunter.png)](#)
 
