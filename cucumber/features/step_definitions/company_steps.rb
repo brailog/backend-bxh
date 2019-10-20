@@ -23,15 +23,14 @@ end
 
 # < - - - - - - - - MÉTODO GET BY ID - - - - - - - - >
 Quando("realizar uma requisição passando o ID da empresa") do
-  $len = @company.getmaxId
-  $selectId = rand 1..$len
-  $get = @company.getCompany($selectId)
+  $getId = @company.getRandomId
+  $get = @company.getCompany($getId)
 end
 
 Então("a API irá retornar os dados da empresa correspondente respondendo o código {int}") do |int|
   expect($get.code).to eq(int)
   expect($get.message).to eq("OK")
-  expect($get["id"]).to eq($selectId)
+  expect($get["id"]).to eq($getId)
 
   puts "< - - - - - - - - - - - - - - - - - - - - - - >"
   puts "ID              : #{$get["id"]}"
@@ -44,17 +43,40 @@ Então("a API irá retornar os dados da empresa correspondente respondendo o có
 end
 
 Quando("realizar uma requisição para alterar uma empresa") do
-  pending # Write code here that turns the phrase above into concrete actions
+  $putId = @company.getRandomId
+  $put = @company.putCompany($putId)
 end
 
 Então("a API irá retornar os dados da empresa alterados respondendo o código {int}") do |int|
-  pending # Write code here that turns the phrase above into concrete actions
+  expect($put.code).to eq(int)
+  expect($put.message).to eq("OK")
+  expect($put["id"]).to eq($putId)
+
+  puts "< - - - - - - - - - - - - - - - - - - - - - - >"
+  puts "ID              : #{$put["id"]}"
+  puts "Name            : #{$put["name"]}"
+  puts "Description     : #{$put["description"]}"
+  puts "CNPJ            : #{$put["cnpj"]}"
+  puts "Phone           : #{$put["phone"]}"
+  puts "Status code     : #{$put.code}"
+
 end
 
 Quando("realizar uma requisição para excluir uma empresa") do
-  pending # Write code here that turns the phrase above into concrete actions
+  $deleteId = @company.getRandomId
+  $delete = @company.deleteCompany($deleteId)
 end
 
 Então("a API deverá retornar os dados da exclusão respondendo o código {int}") do |int|
-  pending # Write code here that turns the phrase above into concrete actions
+  expect($delete.code).to eq(int)
+  expect($delete.message).to eq("No Content")
+
+  puts "< - - - - - - - - - - - - - - - - - - - - - - >"
+  puts "ID              : #{$delete["id"]}"
+  puts "Name            : #{$delete["name"]}"
+  puts "Description     : #{$delete["description"]}"
+  puts "CNPJ            : #{$delete["cnpj"]}"
+  puts "Phone           : #{$delete["phone"]}"
+  puts "Status code     : #{$delete.code}"
+
 end

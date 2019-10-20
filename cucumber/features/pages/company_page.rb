@@ -13,10 +13,16 @@ class Company
         self.class.post("/companies",@options)
     end
 
-    def getmaxId
-        # Método que retorna o número maximo de elementos presente na API 
+    def getRandomId
+        # Método recursivo para retornar um ID valido para usar como teste.
         len = self.class.get("/companies",@options2)
-        len.length
+        randId = rand 1..len.length
+        checkid = getCompany(randId)
+        if checkid.code == 404 # Se o CODE retornar 404 isso quer dizer que não encontrou um ID entre os aleatorios
+            getRandomId        # Então de forma recursiva a função procurar um novo
+        else
+            randId
+        end
     end
 
     def getCompany (id)
@@ -27,7 +33,7 @@ class Company
         self.class.put("/companies/#{id}",@options)
     end
 
-    def deleteStartup(id)
+    def deleteCompany(id)
         self.class.delete("/companies/#{id}",@options2)
     end
 end
