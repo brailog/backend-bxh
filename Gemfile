@@ -50,6 +50,7 @@ group :production do
   # Use Postgres as the datebase for Production sql is not suport by heroku
   gem 'pg'
 end
+gem 'rack-cors'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
