@@ -7,6 +7,13 @@ ruby '2.5.1'
 gem 'rails', '~> 6.0.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
+# gem to faker generates data at random
+gem 'faker'
+gem 'json'
+gem 'httparty'
+gem 'cucumber-rails', require: false
+gem 'database_cleaner'
+gem 'rspec-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
@@ -15,7 +22,6 @@ gem 'puma', '~> 3.11'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Active Storage variant
-
 # gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
