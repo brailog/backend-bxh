@@ -33,7 +33,7 @@ Então, "Bug x Hunter" serve para desenvolvedores que querem começar no mundo d
 | :-: | :-------------------------: |
 |  Adriana Alves dos Santos  | Engenheiro de teste |
 |  Gabriel Ramos R. Oliveira  | Engenheiro de Back End |
-|  Giovanni Veloso da Silva  | Engenheiro de DevOps |
+|  Giovanni Veloso  | Engenheiro de DevOps |
 | Joao Gabriel Silva de Andrade  | Product Owner |
 | Thiago Prazeres Bezerra  | Engenheiro de Front End |
 |  Victor Sena de Lima Attar  | Scrum Master |
