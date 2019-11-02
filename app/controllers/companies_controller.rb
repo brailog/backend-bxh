@@ -3,6 +3,7 @@ class CompaniesController < ApplicationController
 
   # GET /companies
   def index
+
     @companies = Company.all
 
     render json: @companies
@@ -49,3 +50,5 @@ class CompaniesController < ApplicationController
       params.require(:company).permit(:name, :description, :cnpj, :phone)
     end
 end
+
+
