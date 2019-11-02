@@ -3,11 +3,16 @@ class ProjectsController < ApplicationController
 
   # GET /projects
   def index
-    @projects = Project.all
-
-    render json: @projects
+    # binding.pry
+    if params[:company_id] != nil
+      @projectsbycompanyid = Project.joins(:company).where(projects: {company_id: params[:company_id]})
+      render json: @projectsbycompanyid
+    else
+      
+      @projects = Project.all
+      render json: @projects
+    end
   end
-
   # GET /projects/1
   def show
     render json: @project
