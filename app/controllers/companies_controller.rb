@@ -3,6 +3,7 @@ class CompaniesController < ApplicationController
 
   # GET /companies
   def index
+
     @companies = Company.all
 
     render json: @companies
@@ -46,6 +47,8 @@ class CompaniesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def company_params
-      params.require(:company).permit(:name, :description, :cnpj, :phone)
+      params.require(:company).permit(:name, :description, :cnpj, :phone, :email, :password)
     end
 end
+
+
