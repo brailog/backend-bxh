@@ -16,6 +16,8 @@ Então('a API irá retornar os dados do cadastro da empresa respondendo o códig
   puts "Response Message: #{$response.message}"
   puts '< - - - - - - - - - - - - - - - - - - - - - - >'
   puts "ID              : #{$response['id']}"
+  puts "Email           : #{$response['email']}"
+  puts "Senha           : #{$response['password']}" + "*"
   puts "Name            : #{$response['name']}"
   puts "Description     : #{$response['description']}"
   puts "CNPJ            : #{$response['cnpj']}"
@@ -35,6 +37,8 @@ Então('a API irá retornar os dados da empresa correspondente respondendo o có
 
   puts '< - - - - - - - - - - - - - - - - - - - - - - >'
   puts "ID              : #{$get['id']}"
+  puts "Email           : #{$get['email']}"
+  puts "Senha           : #{$get['password']}" + "*"
   puts "Name            : #{$get['name']}"
   puts "Description     : #{$get['description']}"
   puts "CNPJ            : #{$get['cnpj']}"
@@ -54,6 +58,8 @@ Então('a API irá retornar os dados da empresa alterados respondendo o código 
 
   puts '< - - - - - - - - - - - - - - - - - - - - - - >'
   puts "ID              : #{$put['id']}"
+  puts "Email           : #{$put['email']}"
+  puts "Senha           : #{$put['password']}" + "*"
   puts "Name            : #{$put['name']}"
   puts "Description     : #{$put['description']}"
   puts "CNPJ            : #{$put['cnpj']}"
@@ -72,6 +78,8 @@ Então('a API deverá retornar os dados da exclusão respondendo o código {int}
 
   puts '< - - - - - - - - - - - - - - - - - - - - - - >'
   puts "ID              : #{$delete['id']}"
+  puts "Email           : #{$delete['email']}"
+  puts "Senha           : #{$delete['password']}"
   puts "Name            : #{$delete['name']}"
   puts "Description     : #{$delete['description']}"
   puts "CNPJ            : #{$delete['cnpj']}"
