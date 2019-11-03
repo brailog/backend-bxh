@@ -17,7 +17,7 @@ Então('a API irá retornar os dados do cadastro da empresa respondendo o códig
   puts '< - - - - - - - - - - - - - - - - - - - - - - >'
   puts "ID              : #{$response['id']}"
   puts "Email           : #{$response['email']}"
-  puts "Senha           : #{$response['password']}"
+  puts "Senha           : #{$response['password']}" + "*"
   puts "Name            : #{$response['name']}"
   puts "Description     : #{$response['description']}"
   puts "CNPJ            : #{$response['cnpj']}"
@@ -38,7 +38,7 @@ Então('a API irá retornar os dados da empresa correspondente respondendo o có
   puts '< - - - - - - - - - - - - - - - - - - - - - - >'
   puts "ID              : #{$get['id']}"
   puts "Email           : #{$get['email']}"
-  puts "Senha           : #{$get['password']}"
+  puts "Senha           : #{$get['password']}" + "*"
   puts "Name            : #{$get['name']}"
   puts "Description     : #{$get['description']}"
   puts "CNPJ            : #{$get['cnpj']}"
@@ -59,7 +59,7 @@ Então('a API irá retornar os dados da empresa alterados respondendo o código 
   puts '< - - - - - - - - - - - - - - - - - - - - - - >'
   puts "ID              : #{$put['id']}"
   puts "Email           : #{$put['email']}"
-  puts "Senha           : #{$put['password']}"
+  puts "Senha           : #{$put['password']}" + "*"
   puts "Name            : #{$put['name']}"
   puts "Description     : #{$put['description']}"
   puts "CNPJ            : #{$put['cnpj']}"
