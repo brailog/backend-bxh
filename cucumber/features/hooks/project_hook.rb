@@ -1,9 +1,9 @@
 Before '@project' do 
-    @name = Faker::Project.name
-    @description = Faker::Project.catch_phrase
-    @link1 = Faker::Project.catch_phrase
-    @link2 = Faker::Project.catch_phrase 
-    @category = Faker::Project.category
+    @name = Faker::Game.title
+    @description = Faker::Game.genre
+    @link1 = "www."+Faker::DcComics.hero+".com"
+    @link2 = "www."+Faker::DcComics.villain+".com"
+    @category = Faker::Music.genre
 
     @body = {
             project: {
@@ -11,8 +11,10 @@ Before '@project' do
                 "description":@description,
                 "link1":@link1,
                 "link2":@link2,
-                "category":@category
-            }               
+                "category":@category,
+                "company_id":100
+            }
     }
+
     @project = Project.new(@body)
 end
