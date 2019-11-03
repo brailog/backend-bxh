@@ -8,6 +8,8 @@ Before '@company' do
 
     @body = {
             company: {
+                "email":@email,
+                "senha":@password,
                 "name":@name,
                 "description":@description,
                 "cnpj":@cnpj,
