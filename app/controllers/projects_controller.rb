@@ -5,6 +5,7 @@ class ProjectsController < ApplicationController
 
   # GET /projects
   def index
+    # binding.pry
     if !params[:company_id].nil?
       @projectsbycompanyid = Project.joins(:company).where(projects: { company_id: params[:company_id] })
       render json: @projectsbycompanyid
@@ -49,11 +50,14 @@ class ProjectsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_project
+    # binding.pry
     @project = Project.find(params[:id])
+    raise "ID NOT FOUND"  if @project.company_id != params["company_id"].to_i
   end
 
   # Only allow a trusted parameter "white list" through.
   def project_params
+    # binding.pry
     params.require(:project).permit(:name, :description, :link1, :link2, :category, :company_id)
   end
 end
