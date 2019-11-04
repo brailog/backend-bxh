@@ -1,6 +1,6 @@
-class Company
+class Project
     include HTTParty
-    require_relative '../hooks/company_hook'
+    require_relative '../hooks/project_hook'
     base_uri 'http://localhost:3000'
 
     def initialize(body)
@@ -8,16 +8,16 @@ class Company
         @options2 = {}
     end
 
-    def postCompany
+    def postProject
         # Método que simula o método POST
-        self.class.post("/companies",@options)
+        self.class.post("/projects",@options)
     end
 
     def getRandomId
         # Método recursivo para retornar um ID valido para usar como teste.
-        json = self.class.get("/companies",@options2)
+        json = self.class.get("/projects",@options2)
         randId = rand json.first["id"]..json.last["id"]
-        checkid = getCompany(randId)
+        checkid = getProject(randId)
         if checkid.code == 404 # Se o CODE retornar 404 isso quer dizer que não encontrou um ID entre os aleatorios
             getRandomId        # Então de forma recursiva a função procurar um novo
         else
@@ -25,15 +25,15 @@ class Company
         end
     end
 
-    def getCompany (id)
-        self.class.get("/companies/#{id}", @options2)
+    def getProject (id)
+        self.class.get("/projects/#{id}", @options2)
     end
 
-    def putCompany(id)
-        self.class.put("/companies/#{id}",@options)
+    def putProject(id)
+        self.class.put("/projects/#{id}",@options)
     end
 
-    def deleteCompany(id)
-        self.class.delete("/companies/#{id}",@options2)
+    def deleteProject(id)
+        self.class.delete("/projects/#{id}",@options2)
     end
 end
