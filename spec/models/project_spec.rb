@@ -7,7 +7,8 @@ RSpec.describe Project, :type => :model do
     @link1 = "www."+Faker::DcComics.hero+".com"
     @link2 = "www."+Faker::DcComics.villain+".com"
     @category = Faker::Music.genre
-    binding.pry
+    json = HTTParty.get('http://localhost:3000/companies', :body => {})
+    @company_id = json.first["id"]
     project = Project.new(
         {
                 "name":@name,
@@ -15,7 +16,7 @@ RSpec.describe Project, :type => :model do
                 "link1":@link1,
                 "link2":@link2,
                 "category":@category,
-                "company_id":100
+                "company_id":@company_id
         }
 )
     expect(project).to be_valid
