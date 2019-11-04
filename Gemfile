@@ -47,13 +47,14 @@ group :development do
   # background. Read more: https://github.com/rails/spring
   gem 'active_record_query_trace'
   gem 'better_errors'
-  gem 'pry-byebug'
+
   gem 'rubocop'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'colorize'
 end
 
+gem 'pry-byebug'
 group :production do
   # Use Postgres as the datebase for Production sql is not suport by heroku
   gem 'pg'

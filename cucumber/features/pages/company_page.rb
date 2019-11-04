@@ -15,8 +15,8 @@ class Company
 
     def getRandomId
         # Método recursivo para retornar um ID valido para usar como teste.
-        len = self.class.get("/companies",@options2)
-        randId = rand 1..len.length
+        json = self.class.get("/companies",@options2)
+        randId = rand json.first["id"]..json.last["id"]
         checkid = getCompany(randId)
         if checkid.code == 404 # Se o CODE retornar 404 isso quer dizer que não encontrou um ID entre os aleatorios
             getRandomId        # Então de forma recursiva a função procurar um novo
