@@ -47,17 +47,6 @@ ActiveRecord::Schema.define(version: 2019_11_03_171812) do
     t.index ["company_id"], name: "index_projects_on_company_id"
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "email"
-    t.string "password"
-    t.integer "company_id", null: false
-    t.integer "hunter_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["company_id"], name: "index_users_on_company_id"
-    t.index ["hunter_id"], name: "index_users_on_hunter_id"
-  end
-
   add_foreign_key "projects", "companies"
   add_foreign_key "users", "companies"
   add_foreign_key "users", "hunters"
