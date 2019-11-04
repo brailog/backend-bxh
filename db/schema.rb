@@ -48,6 +48,4 @@ ActiveRecord::Schema.define(version: 2019_11_03_171812) do
   end
 
   add_foreign_key "projects", "companies"
-  add_foreign_key "users", "companies"
-  add_foreign_key "users", "hunters"
 end

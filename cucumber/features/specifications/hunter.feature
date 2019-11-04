@@ -21,7 +21,7 @@ Cenário: Alterar um hunter
     Quando realizar uma requisição para alterar um hunter
     Então a API irá retornar os dados do hunter alterados respondendo o código 200
 
-Cenário: Deletar um hunter
-    Dado o endereço da API para manter o cadastro do hunter
-    Quando realizar uma requisição para excluir um hunter
-    Então a API deverá retornar os dados da exclusão respondendo o código 204
+# Cenário: Deletar um hunter
+#     Dado o endereço da API para manter o cadastro do hunter
+#     Quando realizar uma requisição para excluir um hunter
+#     Então a API deverá retornar os dados da exclusão respondendo o código 204

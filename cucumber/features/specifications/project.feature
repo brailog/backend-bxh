@@ -21,7 +21,7 @@ Cenário: Alterar um projeto
     Quando realizar uma requisição para alterar um projeto
     Então a API irá retornar os dados do projeto alterados respondendo o código 200
 
-Cenário: Deletar um projeto
-    Dado o endereço da API para manter o cadastro do projeto
-    Quando realizar uma requisição para excluir um projeto
-    Então a API deverá retornar os dados da exclusão respondendo o código 204
+# Cenário: Deletar um projeto
+#     Dado o endereço da API para manter o cadastro do projeto
+#     Quando realizar uma requisição para excluir um projeto
+#     Então a API deverá retornar os dados da exclusão respondendo o código 204
