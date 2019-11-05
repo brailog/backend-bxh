@@ -1,10 +1,10 @@
 Before '@company' do 
     @name = Faker::Company.name
-    @description = Faker::Company.catch_phrase
+    @description = Faker::Movies::VForVendetta.speech
     @cnpj = Faker::Company.brazilian_company_number(formatted: false)
     @phone = Faker::PhoneNumber.phone_number
     @email = Faker::Internet.email
-    @password = 123456
+    @password = 12345678
 
     @body = {
             company: {
