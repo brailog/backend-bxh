@@ -13,6 +13,7 @@ gem 'puma', '~> 3.11'
 gem 'cucumber-rails', require: false
 gem 'database_cleaner'
 gem 'faker'
+gem 'factory_bot'
 gem 'httparty'
 gem 'json'
 gem 'rspec-rails'
