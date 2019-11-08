@@ -12,7 +12,7 @@ Before '@project' do
                 "link1":@link1,
                 "link2":@link2,
                 "category":@category,
-                "company_id":100.
+                "company_id":100
             }
     }
 
