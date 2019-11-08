@@ -14,6 +14,8 @@ gem 'cucumber-rails', require: false
 gem 'database_cleaner'
 gem 'faker'
 gem 'factory_bot'
+gem 'factory_girl'
+gem 'factory_girl_rails'
 gem 'httparty'
 gem 'json'
 gem 'rspec-rails'
