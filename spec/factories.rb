@@ -1,3 +1,4 @@
+require 'faker'
 company = Company.new(
     {
     "name":"Heller LLC",
@@ -9,6 +10,17 @@ company = Company.new(
     }
 )
 company.save!
+
+FactoryGirl.define do
+    factory :company do
+        name { Faker::Company.name } 
+        description { Faker::Movies::VForVendetta.speech }
+        cnpj { Faker::Company.brazilian_company_number(formatted: false) }
+        phone { Faker::PhoneNumber.phone_number }
+        email { Faker::Internet.email }
+        password { 12345678 }
+    end     
+end
 
 FactoryGirl.define do
     factory :project do
