@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
+  # devise_for :models
   get 'projectsbycompanyid/index'
   get 'projectsbycompanyid/show'
   resources :hunters
   resources :projects
   resources :companies
+  
+  resources :sessions, only: [:create, :destroy]
 
   resources :companies do 
     resources :projects 
