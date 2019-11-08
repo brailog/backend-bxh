@@ -1,4 +1,5 @@
 require 'faker'
+
 company = Company.new(
     {
     "name":"Heller LLC",
@@ -9,6 +10,7 @@ company = Company.new(
     "password":"12345678"
     }
 )
+
 company.save!
 
 FactoryGirl.define do
@@ -24,11 +26,23 @@ end
 
 FactoryGirl.define do
     factory :project do
-        name { "Nome" }
-        description { "description" }
-        link1 { "link1" }
-        link2 { "link2" }
-        category { "category" }
+        name { Faker::Game.title }
+        description { Faker::Movies::VForVendetta.speech }
+        link1 { "www."+Faker::DcComics.hero+".com" }
+        link2 { "www."+Faker::DcComics.villain+".com" }
+        category { Faker::Music.genre }
         company_id { company.id }
+    end 
+end
+
+FactoryGirl.define do
+    factory :hunter do
+        name { Faker::Movies::VForVendetta.character }
+        description { Faker::Movies::VForVendetta.speech }
+        cpf { Faker::IDNumber.brazilian_citizen_number(formatted: true) }
+        phone { Faker::PhoneNumber.cell_phone }
+        link1 { "www."+Faker::DcComics.heroine+".com" }
+        email { Faker::Internet.email }
+        password { 12345678 }
     end 
 end
