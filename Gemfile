@@ -13,6 +13,9 @@ gem 'puma', '~> 3.11'
 gem 'cucumber-rails', require: false
 gem 'database_cleaner'
 gem 'faker'
+gem 'factory_bot'
+gem 'factory_girl'
+gem 'factory_girl_rails'
 gem 'httparty'
 gem 'json'
 gem 'rspec-rails'
@@ -33,6 +36,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'rack-cors'
 
 group :development, :test do
+  gem "factory_girl"
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'sqlite3', '~> 1.4'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
