@@ -3,8 +3,8 @@ class CreateHunters < ActiveRecord::Migration[6.0]
     create_table :hunters do |t|
       t.string :name
       t.text :description
-      t.integer :cnpj
-      t.integer :phone
+      t.string :cpf
+      t.string :phone
       t.string :link1
 
       t.timestamps

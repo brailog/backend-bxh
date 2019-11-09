@@ -20,7 +20,7 @@ Cenário: Alterar uma empresa
     Quando realizar uma requisição para alterar uma empresa
     Então a API irá retornar os dados da empresa alterados respondendo o código 200
 
-Cenário: Consultar uma empresa
-    Dado o endereço da API para manter o cadastro da empresa
-    Quando realizar uma requisição para excluir uma empresa
-    Então a API deverá retornar os dados da exclusão respondendo o código 204
+# Cenário: Deletar uma empresa
+#     Dado o endereço da API para manter o cadastro da empresa
+#     Quando realizar uma requisição para excluir uma empresa
+#     Então a API deverá retornar os dados da exclusão respondendo o código 204
