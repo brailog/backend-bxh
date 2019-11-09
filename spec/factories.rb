@@ -10,8 +10,8 @@ FactoryBot.define do
         name { 'BugXHunter Pentest' }
         description { 'Pentest na plataforma Bug x Hunter' }
         category { 'PENTEST' }
-        link1 { '' }
-        link2 { '' }
+        link1 { 'https://www.google.com.br/' }
+        link2 { 'https://www.w3school.com.br/' }
         company { FactoryBot.build(:company) }
     end
 end
