@@ -52,7 +52,11 @@ class ProjectsController < ApplicationController
   def set_project
     # binding.pry
     @project = Project.find(params[:id])
+<<<<<<< HEAD
     raise "ID NOT FOUND"  if @project.company_id != params["company_id"].to_i
+=======
+    raise "ID NOT FOUND"  if @project.company_id != params["company_id"].to_i and params["company_id"] != nil
+>>>>>>> 03287047e5de7f409c2c6b74fff3b0ffebe8384e
   end
 
   # Only allow a trusted parameter "white list" through.
