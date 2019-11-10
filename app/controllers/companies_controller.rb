@@ -3,9 +3,8 @@ class CompaniesController < ApplicationController
 
   # GET /companies
   def index
-
+    # binding.pry
     @companies = Company.all
-
     render json: @companies
   end
 
@@ -42,11 +41,13 @@ class CompaniesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_company
+      # binding.pry
       @company = Company.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
     def company_params
+      # binding.pry
       params.require(:company).permit(:name, :description, :cnpj, :phone, :email, :password)
     end
 end
