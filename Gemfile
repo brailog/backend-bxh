@@ -27,7 +27,7 @@ gem 'rspec-rails'
 # gem 'bcrypt', '~> 3.1.7'
 
 # divise to make auth on app
-gem 'devise'
+# gem 'devise'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
