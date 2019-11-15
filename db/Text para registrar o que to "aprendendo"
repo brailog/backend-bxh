@@ -1,9 +1,0 @@
-Company.joins(:projects).where(projects: { company_id: 100})
-   (0.7ms)  SELECT sqlite_version(*)
-  Company Load (0.7ms)  SELECT "companies".* FROM "companies" INNER JOIN "projects" ON "projects"."company_id" = "companies"."id" WHERE "projects"."company_id" = ? LIMIT ? 
-
-
-
-SELECT projects.*
-    FROM companies 
-    INNER JOIN projects on projects.company_id = companies.id
