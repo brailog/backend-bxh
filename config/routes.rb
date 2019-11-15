@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  get 'projectsbycompanyid/index'
-  get 'projectsbycompanyid/show'
+  resources :bug_requests
   resources :hunters
   resources :projects
   resources :companies

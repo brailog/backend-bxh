@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_03_171812) do
+ActiveRecord::Schema.define(version: 2019_11_15_133428) do
+
+  create_table "bug_requests", force: :cascade do |t|
+    t.string "title"
+    t.string "category"
+    t.string "repositore"
+    t.string "aplicationlink"
+    t.boolean "status"
+    t.integer "project_id", null: false
+    t.integer "hunter_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["hunter_id"], name: "index_bug_requests_on_hunter_id"
+    t.index ["project_id"], name: "index_bug_requests_on_project_id"
+  end
 
   create_table "companies", force: :cascade do |t|
     t.string "name"
@@ -58,6 +72,8 @@ ActiveRecord::Schema.define(version: 2019_11_03_171812) do
     t.index ["hunter_id"], name: "index_users_on_hunter_id"
   end
 
+  add_foreign_key "bug_requests", "hunters"
+  add_foreign_key "bug_requests", "projects"
   add_foreign_key "projects", "companies"
   add_foreign_key "users", "companies"
   add_foreign_key "users", "hunters"

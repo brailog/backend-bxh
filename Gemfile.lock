@@ -108,11 +108,6 @@ GEM
     erubi (1.9.0)
     factory_bot (5.1.1)
       activesupport (>= 4.2.0)
-    factory_girl (4.9.0)
-      activesupport (>= 3.0.0)
-    factory_girl_rails (4.9.0)
-      factory_girl (~> 4.9.0)
-      railties (>= 3.0.0)
     faker (2.6.0)
       i18n (>= 1.6, < 1.8)
     ffi (1.11.1)
@@ -270,8 +265,6 @@ DEPENDENCIES
   cucumber-rails
   database_cleaner
   factory_bot
-  factory_girl
-  factory_girl_rails
   faker
   httparty
   json
