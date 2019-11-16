@@ -24,6 +24,7 @@ gem 'rspec-rails'
 # gem 'bcrypt', '~> 3.1.7'
 # Devise for auth
 gem 'devise'
+gem 'simple_token_authentication'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

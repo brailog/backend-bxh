@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :hunters
   # devise_for :companies
   get "projectsbycompanyid/index"
   get "projectsbycompanyid/show"
