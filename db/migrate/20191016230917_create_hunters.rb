@@ -4,6 +4,7 @@ class CreateHunters < ActiveRecord::Migration[6.0]
       t.string :name
       t.text :description
       t.string :cpf
+      t.string :email
       t.string :phone
       t.string :link1
 
