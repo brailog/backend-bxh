@@ -39,13 +39,14 @@ class HuntersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_hunter
-      @hunter = Hunter.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def hunter_params
-      params.require(:hunter).permit(:name, :description, :cnpj, :phone, :link1, :email, :password)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_hunter
+    @hunter = Hunter.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def hunter_params
+    params.require(:hunter).permit(:name, :email, :password, :description, :cnpj, :phone, :link1)
+  end
 end
