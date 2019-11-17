@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :hunters
+  # devise_for :hunters
   # devise_for :companies
   get "projectsbycompanyid/index"
   get "projectsbycompanyid/show"
@@ -10,6 +10,12 @@ Rails.application.routes.draw do
   resources :companies do
     resources :projects
   end
-  resources :sessions, only: [:create, :destroy]
+  post "sessions/company", to: "sessions#company"
+  post "sessions/bughunter", to: "sessions#bughunter"
+
+  # namespace :sessions do
+  #   resources :company, :bughunter
+  # end
+  # resources :sessions, only: [:company, :bughunter]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
