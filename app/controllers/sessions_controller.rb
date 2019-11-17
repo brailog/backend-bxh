@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
     user = Company.where(email: params[:email]).first
 
     if user && user.valid_password?(params[:password])
-      render json: { data: user.as_json(only: [:email, :authentication_token]) }, status: :created
+      render json: { data: user.as_json(only: [:email, :authentication_token, :id, :name]) }, status: :created
     else
       render json: { data: "Wrong password or email" }, status: :unauthorized
     end
@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
     user = Hunter.where(email: params[:email]).first
 
     if user && user.valid_password?(params[:password])
-      render json: { data: user.as_json(only: [:email, :authentication_token]) }, status: :created
+      render json: { data: user.as_json(only: [:email, :authentication_token, :id, :name]) }, status: :created
     else
       render json: { data: "Wrong password or email" }, status: :unauthorized
     end
