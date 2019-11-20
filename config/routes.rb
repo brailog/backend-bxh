@@ -9,9 +9,19 @@ Rails.application.routes.draw do
   resources :projects
   resources :companies
 
+  # "ninho" para as rotas de empresa, projeto e os bugrequest (NÃO É O ACONSELHADO UTILIZAR MAS DEVIDO AO TEMPO TA OTIMO!)
   resources :companies do
-    resources :projects
+    resources :projects do
+      resources :bug_requests
+    end
+  end      
+
+  # Todos os bugrequest de um projeto especifico
+  resources :projects do 
+    resources :bug_requests
   end
+
+  # rotas de autenticação 
   post "sessions/company", to: "sessions#company"
   post "sessions/bughunter", to: "sessions#bughunter"
 

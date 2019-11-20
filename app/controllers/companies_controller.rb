@@ -3,7 +3,6 @@ class CompaniesController < ApplicationController
 
   # GET /companies
   def index
-    binding.pry
     @companies = Company.all
 
     render json: @companies
