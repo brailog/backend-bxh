@@ -4,7 +4,6 @@ class HuntersController < ApplicationController
   # GET /hunters
   def index
     @hunters = Hunter.all
-
     render json: @hunters
   end
 

@@ -21,6 +21,10 @@ Rails.application.routes.draw do
     resources :bug_requests
   end
 
+  resources :hunters do 
+    resources :bug_requests
+  end
+
   # rotas de autenticação 
   post "sessions/company", to: "sessions#company"
   post "sessions/bughunter", to: "sessions#bughunter"

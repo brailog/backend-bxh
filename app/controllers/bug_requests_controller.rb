@@ -3,8 +3,12 @@ class BugRequestsController < ApplicationController
 
   # GET /bug_requests
   def index
+    
     if !params[:project_id].nil?
       @bug_requests = BugRequest.joins(:project).where(bug_requests: { project_id: params[:project_id]})
+      render json: @bug_requests
+    elsif !params[:hunter_id].nil?
+      @bug_requests = BugRequest.joins(:hunter).where(bug_requests: { hunter_id: params[:hunter_id]})
       render json: @bug_requests
     else
       @bug_requests = BugRequest.all
