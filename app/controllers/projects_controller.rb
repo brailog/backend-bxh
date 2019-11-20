@@ -5,6 +5,7 @@ class ProjectsController < ApplicationController
 
   # GET /projects
   def index
+    binding.pry
     if !params[:company_id].nil?
       @projectsbycompanyid = Project.joins(:company).where(projects: { company_id: params[:company_id] })
       render json: @projectsbycompanyid
@@ -17,6 +18,7 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   def show
     puts @project
+    binding.pry
     if @project.company_id == params["company_id"].to_i
       render json: @project
     else

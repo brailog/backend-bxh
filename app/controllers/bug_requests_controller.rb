@@ -3,16 +3,23 @@ class BugRequestsController < ApplicationController
 
   # GET /bug_requests
   def index
-    binding.pry
-    @bug_requests = BugRequest.all
-    puts @bug_requests
-    render json: @bug_requests
+    if !params[:project_id].nil?
+      @bug_requests = BugRequest.joins(:project).where(bug_requests: { project_id: params[:project_id]})
+      render json: @bug_requests
+    else
+      @bug_requests = BugRequest.all
+      render json: @bug_requests
+    end
   end
+
 
   # GET /bug_requests/1
   def show
-    binding.pry
-    render json: @bug_request
+    if @bug_request.project_id == params["project_id"].to_i
+      render json: @bug_request
+    else
+      render json: @bug_request.errors, status: :not_found
+    end
   end
 
   # POST /bug_requests
@@ -43,13 +50,11 @@ class BugRequestsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_bug_request
-      binding.pry
       @bug_request = BugRequest.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
     def bug_request_params
-      binding.pry
       params.require(:bug_request).permit(:title, :category, :repository_link, :live_link, :status, :project_id, :hunter_id)
     end
 end
