@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :admins
   resources :rewards
   resources :bug_requests
   # devise_for :hunters
