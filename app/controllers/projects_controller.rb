@@ -16,7 +16,13 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1
   def show
-    render json: @project
+    puts @project
+    if @project.company_id == params["company_id"].to_i
+      render json: @project
+    else
+      render json: @project.errors, status: :not_found
+
+    end
   end
 
   # POST /projects
