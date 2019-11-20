@@ -4,4 +4,6 @@ class Hunter < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+         
+  has_many :bugrequests, class_name: "BugRequest", foreign_key: "bugrequest_id"
 end
