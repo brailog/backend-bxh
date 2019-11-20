@@ -49,7 +49,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the
   # background. Read more: https://github.com/rails/spring
   gem 'active_record_query_trace'
-  gem 'better_errors'
+  # gem 'better_errors'
   gem 'pry-byebug'
   gem 'rubocop'
   gem 'spring'
