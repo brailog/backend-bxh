@@ -58,6 +58,6 @@ class BugRequestsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def bug_request_params
-      params.require(:bug_request).permit(:title, :category, :repository_link, :live_link, :status, :project_id, :hunter_id)
+      params.require(:bug_request).permit(:title, :category, :repository_link, :live_link, :status, :project_id, :hunter_id, :point, :linkcalculation)
     end
 end
