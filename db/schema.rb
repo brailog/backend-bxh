@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_21_004500) do
+ActiveRecord::Schema.define(version: 2019_11_21_022810) do
 
   create_table "admins", force: :cascade do |t|
     t.string "name"
@@ -39,18 +39,20 @@ ActiveRecord::Schema.define(version: 2019_11_21_004500) do
     t.integer "hunter_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.decimal "point"
+    t.string "linkcalculation"
     t.index ["hunter_id"], name: "index_bug_requests_on_hunter_id"
     t.index ["project_id"], name: "index_bug_requests_on_project_id"
   end
 
   create_table "companies", force: :cascade do |t|
     t.string "name"
-    t.string "email"
     t.text "description"
     t.string "cnpj"
     t.string "phone"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "email"
     t.string "password"
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -66,11 +68,11 @@ ActiveRecord::Schema.define(version: 2019_11_21_004500) do
     t.string "name"
     t.text "description"
     t.string "cpf"
-    t.string "email"
     t.string "phone"
     t.string "link1"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "email"
     t.string "password"
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -84,7 +86,6 @@ ActiveRecord::Schema.define(version: 2019_11_21_004500) do
 
   create_table "projects", force: :cascade do |t|
     t.string "name"
-    t.string "email"
     t.text "description"
     t.text "link1"
     t.text "link2"
@@ -104,8 +105,21 @@ ActiveRecord::Schema.define(version: 2019_11_21_004500) do
     t.index ["bugrequest_id"], name: "index_rewards_on_bugrequest_id"
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string "email"
+    t.string "password"
+    t.integer "company_id", null: false
+    t.integer "hunter_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["company_id"], name: "index_users_on_company_id"
+    t.index ["hunter_id"], name: "index_users_on_hunter_id"
+  end
+
   add_foreign_key "bug_requests", "hunters"
   add_foreign_key "bug_requests", "projects"
   add_foreign_key "projects", "companies"
   add_foreign_key "rewards", "bugrequests"
+  add_foreign_key "users", "companies"
+  add_foreign_key "users", "hunters"
 end
