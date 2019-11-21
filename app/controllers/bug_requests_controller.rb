@@ -7,7 +7,7 @@ class BugRequestsController < ApplicationController
     if !params[:project_id].nil?
       @bug_requests = BugRequest.joins(:project).where(bug_requests: { project_id: params[:project_id]})
       render json: @bug_requests
-    elsif !params[:hunter_id].nil?
+    elsif !params[:hunter_id].nil?     
       @bug_requests = BugRequest.joins(:hunter).where(bug_requests: { hunter_id: params[:hunter_id]})
       render json: @bug_requests
     else
@@ -15,7 +15,6 @@ class BugRequestsController < ApplicationController
       render json: @bug_requests
     end
   end
-
 
   # GET /bug_requests/1
   def show

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  # devise_for :admins
   resources :admins
   resources :rewards
   resources :bug_requests
@@ -29,6 +30,7 @@ Rails.application.routes.draw do
   # rotas de autenticação 
   post "sessions/company", to: "sessions#company"
   post "sessions/bughunter", to: "sessions#bughunter"
+  post "sessions/admin", to: "sessions#admin"
 
   # namespace :sessions do
   #   resources :company, :bughunter
