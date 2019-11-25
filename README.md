@@ -9,6 +9,7 @@ Já conhece a [Wiki](https://github.com/brailog/backend-bxh/wiki)? Lá tem infom
 
 [![](http://files.softicons.com/download/culture-icons/anime-icons-i-ii-by-samir-chajia/png/128x128/Hunter%20x%20Hunter.png)](#)
 
+- Slide: https://docs.google.com/presentation/d/1f43fXeJg5j_OxM4EgfVZPwWfNEObWWuR1cufbTSAfOI/edit?folder=1v2LVH94dcW0XrL1ywftB3SqSKA-DFmiH#slide=id.p
 - Link para o site --> https://bughunter-front.herokuapp.com/
 - Link para documentação da API --> https://documenter.getpostman.com/view/8182766/SW7Z4otv?version=latest
 - O Bug X Hunter é Projeto da disciplina de [engenharia de software](https://github.com/IF977/if977) do Centro de informática da UFPE
